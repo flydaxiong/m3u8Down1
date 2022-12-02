@@ -30,8 +30,8 @@ public class VideoEntity {
 
     private LocalDateTime saveTime = LocalDateTime.now();
 
-    @OneToMany(targetEntity = TagEntity.class, fetch = FetchType.EAGER)
-    @JoinTable(name = "t_tag")
+    @ManyToMany(targetEntity = TagEntity.class, fetch = FetchType.EAGER)
+    @JoinTable(name = "t_video_tag")
     private List<TagEntity> tags;
 
 

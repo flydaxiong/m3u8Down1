@@ -21,20 +21,10 @@ public class TagEntity {
     private Long id;
     private String name;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    private VideoEntity videoList;
+    @ManyToMany(mappedBy = "tags")
+    private List<VideoEntity> videoList;
 
-    @ManyToOne
-    @JoinColumn(name = "video_entity_id")
-    private VideoEntity videoEntity;
 
-    public VideoEntity getVideoEntity() {
-        return videoEntity;
-    }
-
-    public void setVideoEntity(VideoEntity videoEntity) {
-        this.videoEntity = videoEntity;
-    }
 
     @Override
     public boolean equals(Object o) {
